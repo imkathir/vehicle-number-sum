@@ -1,5 +1,5 @@
 <div class="vehicle-sum">
-    <form >
+    <form {{on "submit" this.calculateSum}}>
         <h2>Vehicle Number Sum Calculator</h2>
         <input
             type="text"
@@ -9,8 +9,14 @@
         />
         <button class="btn" {{on "click" this.calculateSum}}>Calculate</button>
 
+      {{#if this.result}}
+        <p class="result">Total sum: <strong>{{this.result}}</strong></p>
+      {{/if}}
+      <p class="">
+        <a href="https://www.carwale.com/used/carvaluation/" target="_blank" rel="noopener noreferrer" class="link">
+          Check Car Valuation on CarWale
+        </a>
+      </p>
     </form>
-  {{#if this.result}}
-    <p>Total sum: <strong>{{this.result}}</strong></p>
-  {{/if}}
+
 </div>

@@ -4,8 +4,7 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
-    rootURL: '/vehicle-sum-app/',
-    // Add options here
+    rootURL: '/vehicle-number-sum/',
   });
 
   // Use `app.import` to add additional libraries to the generated

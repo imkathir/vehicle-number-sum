@@ -29,6 +29,7 @@ export default class VehicleSumComponent extends Component {
 
   @action
   calculateSum() {
+    event.preventDefault();
     const sum = this.input
       .toUpperCase()
       .split('')
