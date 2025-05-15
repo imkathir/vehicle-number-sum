@@ -1,0 +1,23 @@
+.vehicle-sum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem;
+    background-color: #e1e9db;
+    border-radius: 20px;
+    }
+.btn {
+    padding: .4rem 1rem;
+    margin-left: .5rem;
+    background-color: rgb(32, 30, 30);
+    color: #fff;
+    cursor: pointer;
+    border-radius: .3rem;
+}
+input {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

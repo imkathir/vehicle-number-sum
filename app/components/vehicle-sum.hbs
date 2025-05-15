@@ -1,0 +1,16 @@
+<div class="vehicle-sum">
+    <form >
+        <h2>Vehicle Number Sum Calculator</h2>
+        <input
+            type="text"
+            placeholder="Enter Vehicle Number (e.g. TN18H3259)"
+            value={{this.input}}
+            {{on "input" this.updateInput}}
+        />
+        <button class="btn" {{on "click" this.calculateSum}}>Calculate</button>
+
+    </form>
+  {{#if this.result}}
+    <p>Total sum: <strong>{{this.result}}</strong></p>
+  {{/if}}
+</div>
