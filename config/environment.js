@@ -4,7 +4,7 @@ module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'vehicle-number-sum',
     environment,
-    rootURL: '/vehicle-sum-app/',
+    rootURL: '/vehicle-number-sum/',
     locationType: 'history',
     EmberENV: {
       FEATURES: {
@@ -45,7 +45,7 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
-    // here you can enable a production-specific feature
+    ENV.rootURL = '/vehicle-number-sum/';
   }
 
   return ENV;
