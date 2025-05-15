@@ -1,45 +1,20 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
-      - master
-  pull_request: {}
-
-concurrency:
-  group: ci-${{ github.head_ref || github.ref }}
-  cancel-in-progress: true
+  pull_request:
 
 jobs:
   lint:
-    name: "Lint"
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Install Node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 12.x
-          cache: npm
-      - name: Install Dependencies
-        run: npm ci
-      - name: Lint
+          node-version: 18
+
+      - run: npm ci
+
+      - name: Run ESLint
         run: npm run lint
-
-  test:
-    name: "Test"
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 12.x
-          cache: npm
-      - name: Install Dependencies
-        run: npm ci
-      - name: Run Tests
-        run: npm test

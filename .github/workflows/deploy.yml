@@ -3,7 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # or 'master' if that’s your default branch
+      - main
+      - master
 
 jobs:
   deploy:
@@ -29,7 +30,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Ember app
         run: |
